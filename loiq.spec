@@ -31,9 +31,6 @@ make %{?_smp_mflags}
 rm -r %{buildroot}
 make INSTALL_ROOT=%{buildroot} INSTALL="install -p" CP="cp -p" install
 install -D -m0644 %{SOURCE1} %{buildroot}%{_datadir}/applications/%{name}.desktop
-#rm -r %{buildroot}%{_docdir}/loiq
-#rm -f %{buildroot}%{_infodir}/dir
-#%find_lang %{name}
 
 
 %post
@@ -47,13 +44,9 @@ update-desktop-database -q
 
 
 %files 
-#-f %{name}.lang
 %defattr(-,root,root,-)
 %doc COPYING README
-#%doc doc/*.html doc/*.jpg doc/*.png
 %{_bindir}/%{name}
-#%{_mandir}/man1/%{name}.1*
-#%{_infodir}/%{name}*
 %{_datadir}/applications/%{name}.desktop
 
 
