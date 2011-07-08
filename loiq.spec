@@ -21,14 +21,13 @@ us *NIXoids.
 
 %prep
 %setup -q
+qmake-qt4 -o Makefile loiq.pro
+make clean
 
 %build
-rm -f loiq
-qmake-qt4 -o Makefile loiq.pro
 make %{?_smp_mflags}
 
 %install
-rm -r %{buildroot}
 make INSTALL_ROOT=%{buildroot} INSTALL="install -p" CP="cp -p" install
 install -D -m0644 %{SOURCE1} %{buildroot}%{_datadir}/applications/%{name}.desktop
 
