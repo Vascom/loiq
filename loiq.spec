@@ -6,7 +6,7 @@ Release:            1%{?dist}.R
 Source:             %{name}-%{version}.tar.bz2
 Source1:            loiq.desktop
 URL:                http://loiq.sourceforge.net/
-Group:              Applications/Network
+Group:              Applications/Internet
 License:            GPLv3
 
 BuildRequires:      qt4-devel
